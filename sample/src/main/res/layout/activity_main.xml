@@ -74,6 +74,6 @@
         android:layout_marginTop="16dp"
         android:id="@+id/imageButton"
         android:visibility="invisible"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/todo" />
 
 </RelativeLayout>
