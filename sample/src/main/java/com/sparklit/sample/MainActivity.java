@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.sparklit.adbutler.AdButler;
 import com.sparklit.adbutler.Placement;
 import com.sparklit.adbutler.PlacementRequestConfig;
@@ -20,7 +21,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends YouTubeBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
