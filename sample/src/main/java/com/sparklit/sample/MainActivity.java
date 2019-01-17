@@ -6,8 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Button;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.sparklit.adbutler.AdButler;
 import com.sparklit.adbutler.Placement;
 import com.sparklit.adbutler.PlacementRequestConfig;
@@ -22,11 +26,35 @@ import java.util.List;
 import java.util.Set;
 
 public class MainActivity extends YouTubeBaseActivity {
+    YouTubePlayerView youTubePlayerView;
+    Button button;
+    YouTubePlayer.OnInitializedListener onInitializedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        button = (Button)findViewById(R.id.bn);
+        youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player_view);
+        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+                youTubePlayerView.setVisibility(View.VISIBLE);
+                youTubePlayer.loadVideo("ATETjEhT4a8");
+            }
+
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+            }
+        };
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                youTubePlayerView.initialize(PlayerConfig.API_KEY,onInitializedListener);
+            }
+        });
     }
 
     public void requestPlacement(View view) {
