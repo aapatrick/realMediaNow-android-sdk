@@ -80,7 +80,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="72dp"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/bn"
@@ -88,6 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:onClick="playVideo"
         android:text="@string/play" />
 
 </RelativeLayout>

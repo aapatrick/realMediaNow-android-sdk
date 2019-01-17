@@ -1,12 +1,15 @@
 package com.sparklit.sample;
 
 import android.content.Intent;
+import android.drm.DrmStore;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -25,7 +28,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class MainActivity extends YouTubeBaseActivity {
+public class MainActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+
+    public static final String VIDEO_ID = "ATETjEhT4a8";
     YouTubePlayerView youTubePlayerView;
     Button button;
     YouTubePlayer.OnInitializedListener onInitializedListener;
@@ -34,28 +39,91 @@ public class MainActivity extends YouTubeBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*Initialising YouTube Player View*/
+        youTubePlayerView =(YouTubePlayerView)findViewById(R.id.youtube_player_view);
+        youTubePlayerView.initialize(PlayerConfig.API_KEY, this);
         button = (Button)findViewById(R.id.bn);
-        youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player_view);
-        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
-            @Override
-            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayerView.setVisibility(View.VISIBLE);
-                youTubePlayer.loadVideo("ATETjEhT4a8");
-            }
-
-            @Override
-            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-
-            }
-        };
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                youTubePlayerView.initialize(PlayerConfig.API_KEY,onInitializedListener);
-            }
-        });
     }
+
+    //public void playVideo(View target) {
+    //   youTubePlayerView.initialize(PlayerConfig.API_KEY, on);
+    //}
+    @Override
+    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+        Toast.makeText(this, "Failure to Initialize!", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+        /*Add listeners to YouTubePlayer instance*/
+        youTubePlayer.setPlayerStateChangeListener(playerStateChangeListener);
+        youTubePlayer.setPlaybackEventListener(playbackEventListener);
+        /*Start Buffering*/
+        if (!b){
+            youTubePlayer.loadVideo(VIDEO_ID);
+        }
+    }
+
+    private YouTubePlayer.PlayerStateChangeListener playerStateChangeListener = new YouTubePlayer.PlayerStateChangeListener() {
+        @Override
+        public void onLoading() {
+
+        }
+
+        @Override
+        public void onLoaded(String s) {
+
+        }
+
+        @Override
+        public void onAdStarted() {
+
+        }
+
+        @Override
+        public void onVideoStarted() {
+
+        }
+
+        @Override
+        public void onVideoEnded() {
+            youTubePlayerView.setVisibility(View.INVISIBLE);
+        }
+
+        @Override
+        public void onError(YouTubePlayer.ErrorReason errorReason) {
+
+        }
+    };
+
+    private YouTubePlayer.PlaybackEventListener playbackEventListener = new YouTubePlayer.PlaybackEventListener() {
+        @Override
+        public void onPlaying() {
+
+        }
+
+        @Override
+        public void onPaused() {
+
+        }
+
+        @Override
+        public void onStopped() {
+
+        }
+
+        @Override
+        public void onBuffering(boolean b) {
+
+        }
+
+        @Override
+        public void onSeekTo(int i) {
+
+        }
+    };
+
 
     public void requestPlacement(View view) {
         String[] keywords = {"sample2"};
