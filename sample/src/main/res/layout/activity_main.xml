@@ -16,48 +16,52 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="@string/request_placements"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/button2"
-        android:onClick="requestPlacements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/button1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:onClick="requestPlacements"
+        android:text="@string/request_placements"
+        android:visibility="invisible" />
 
     <Button
-        android:text="@string/request_pixel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/button3"
-        android:onClick="requestPixel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/button2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:onClick="requestPixel"
+        android:text="@string/request_pixel"
+        android:visibility="invisible" />
 
     <Button
-        android:text="@string/record_impression"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/button4"
-        android:onClick="recordImpression"
-        android:layout_below="@+id/button3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="16dp" />
-
-    <Button
-        android:text="@string/record_click"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button5"
-        android:onClick="recordClick"
-        android:layout_below="@+id/button4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="16dp" />
+        android:layout_below="@+id/button3"
+        android:layout_marginTop="16dp"
+        android:onClick="recordImpression"
+        android:text="@string/record_impression"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button4"
+        android:layout_marginTop="16dp"
+        android:onClick="recordClick"
+        android:text="@string/record_click"
+        android:visibility="invisible" />
 
     <ImageView
         android:layout_width="match_parent"
