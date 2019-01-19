@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -28,7 +27,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class MainActivity extends YouTubeBaseActivity /*implements YouTubePlayer.OnInitializedListener*/ {
+public class MainActivity extends YouTubeBaseActivity {
 
     YouTubePlayerView youTubePlayerView;
     Button button;
@@ -41,7 +40,7 @@ public class MainActivity extends YouTubeBaseActivity /*implements YouTubePlayer
 
 
         button = (Button)findViewById(R.id.bn);
-        youTubePlayerView =(YouTubePlayerView)findViewById(R.id.youtube_player_view);
+        youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player_view);
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
@@ -88,8 +87,7 @@ public class MainActivity extends YouTubeBaseActivity /*implements YouTubePlayer
 
         @Override
         public void onVideoEnded() {
-
-            
+            youTubePlayerView.setVisibility(View.VISIBLE);
         }
 
         @Override
