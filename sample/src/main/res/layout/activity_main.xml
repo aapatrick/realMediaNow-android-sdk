@@ -57,7 +57,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:adjustViewBounds="true"
         android:contentDescription="@string/todo"
         android:visibility="invisible"
         app:srcCompat="@android:color/background_light" />

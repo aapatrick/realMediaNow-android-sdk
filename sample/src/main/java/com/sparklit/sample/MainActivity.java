@@ -41,6 +41,7 @@ public class MainActivity extends YouTubeBaseActivity {
         setContentView(R.layout.activity_main);
 
 
+
         button = (Button)findViewById(R.id.bn);
         button2 = (Button)findViewById(R.id.button1);
 
