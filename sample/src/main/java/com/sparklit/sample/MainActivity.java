@@ -28,9 +28,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class MainActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+public class MainActivity extends YouTubeBaseActivity /*implements YouTubePlayer.OnInitializedListener*/ {
 
-    public static final String VIDEO_ID = "ATETjEhT4a8";
     YouTubePlayerView youTubePlayerView;
     Button button;
     YouTubePlayer.OnInitializedListener onInitializedListener;
@@ -40,29 +39,30 @@ public class MainActivity extends YouTubeBaseActivity implements YouTubePlayer.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*Initialising YouTube Player View*/
-        youTubePlayerView =(YouTubePlayerView)findViewById(R.id.youtube_player_view);
-        youTubePlayerView.initialize(PlayerConfig.API_KEY, this);
+
         button = (Button)findViewById(R.id.bn);
-    }
+        youTubePlayerView =(YouTubePlayerView)findViewById(R.id.youtube_player_view);
+        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+                youTubePlayer.setPlayerStateChangeListener(playerStateChangeListener);
+                youTubePlayer.setPlaybackEventListener(playbackEventListener);
+                youTubePlayerView.setVisibility(View.VISIBLE);
+                youTubePlayer.loadVideo("ATETjEhT4a8");
+            }
 
-    //public void playVideo(View target) {
-    //   youTubePlayerView.initialize(PlayerConfig.API_KEY, on);
-    //}
-    @Override
-    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-        Toast.makeText(this, "Failure to Initialize!", Toast.LENGTH_LONG).show();
-    }
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
 
-    @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-        /*Add listeners to YouTubePlayer instance*/
-        youTubePlayer.setPlayerStateChangeListener(playerStateChangeListener);
-        youTubePlayer.setPlaybackEventListener(playbackEventListener);
-        /*Start Buffering*/
-        if (!b){
-            youTubePlayer.loadVideo(VIDEO_ID);
-        }
+            }
+        };
+        button.setOnClickListener(new OnClickListener() {
+            /*Initialising YouTube Player View when button clicked*/
+            @Override
+            public void onClick(View view) {
+                youTubePlayerView.initialize(PlayerConfig.API_KEY,onInitializedListener);
+            }
+        });
     }
 
     private YouTubePlayer.PlayerStateChangeListener playerStateChangeListener = new YouTubePlayer.PlayerStateChangeListener() {
@@ -88,7 +88,8 @@ public class MainActivity extends YouTubeBaseActivity implements YouTubePlayer.O
 
         @Override
         public void onVideoEnded() {
-            youTubePlayerView.setVisibility(View.INVISIBLE);
+
+            
         }
 
         @Override
