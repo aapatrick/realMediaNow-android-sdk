@@ -129,6 +129,7 @@ public class MainActivity extends YouTubeBaseActivity {
 
 
     public void requestPlacement(View view) {
+        button2.setVisibility(View.INVISIBLE);
         String[] keywords = {"sample2"};
         Set<String> keywordSet = new HashSet<>();
         Collections.addAll(keywordSet, keywords);

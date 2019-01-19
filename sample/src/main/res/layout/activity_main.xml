@@ -51,11 +51,9 @@
 
     <ImageView
         android:id="@+id/imageButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
+        android:layout_width="203dp"
+        android:layout_height="176dp"
+        android:layout_centerInParent="true"
         android:adjustViewBounds="true"
         android:contentDescription="@string/todo"
         android:visibility="invisible"
