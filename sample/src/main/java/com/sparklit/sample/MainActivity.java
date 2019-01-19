@@ -64,6 +64,7 @@ public class MainActivity extends YouTubeBaseActivity {
             @Override
             public void onClick(View view) {
                 youTubePlayerView.initialize(PlayerConfig.API_KEY,onInitializedListener);
+                button.setVisibility(View.INVISIBLE);
             }
         });
     }
