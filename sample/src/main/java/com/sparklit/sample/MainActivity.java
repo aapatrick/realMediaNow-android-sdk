@@ -31,6 +31,8 @@ public class MainActivity extends YouTubeBaseActivity {
 
     YouTubePlayerView youTubePlayerView;
     Button button;
+    Button button2;
+
     YouTubePlayer.OnInitializedListener onInitializedListener;
 
     @Override
@@ -40,6 +42,8 @@ public class MainActivity extends YouTubeBaseActivity {
 
 
         button = (Button)findViewById(R.id.bn);
+        button2 = (Button)findViewById(R.id.button1);
+
         youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player_view);
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
@@ -87,7 +91,7 @@ public class MainActivity extends YouTubeBaseActivity {
 
         @Override
         public void onVideoEnded() {
-            youTubePlayerView.setVisibility(View.VISIBLE);
+            button2.setVisibility(View.VISIBLE);
         }
 
         @Override

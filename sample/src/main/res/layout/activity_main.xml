@@ -8,24 +8,9 @@
     tools:context="com.sparklit.sample.MainActivity">
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:onClick="requestPlacement"
-        android:text="@string/request_placement"
-        android:visibility="invisible" />
-
-    <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="16dp"
         android:onClick="requestPlacements"
         android:text="@string/request_placements"
         android:visibility="invisible" />
@@ -34,10 +19,6 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/button2"
-        android:layout_marginTop="16dp"
         android:onClick="requestPixel"
         android:text="@string/request_pixel"
         android:visibility="invisible" />
@@ -46,10 +27,6 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/button3"
-        android:layout_marginTop="16dp"
         android:onClick="recordImpression"
         android:text="@string/record_impression"
         android:visibility="invisible" />
@@ -58,44 +35,49 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/button4"
-        android:layout_marginTop="16dp"
         android:onClick="recordClick"
         android:text="@string/record_click"
         android:visibility="invisible" />
-
-    <ImageView
-        android:id="@+id/imageButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/button5"
-        android:layout_marginTop="16dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/todo"
-        android:visibility="invisible"
-        app:srcCompat="@android:color/background_light" />
 
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/youtube_player_view"
         class="com.google.android.youtube.player.YouTubePlayerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="72dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/todo"
+        android:visibility="invisible"
+        app:srcCompat="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:onClick="requestPlacement"
+        android:text="@string/request_placement"
         android:visibility="invisible" />
 
     <Button
         android:id="@+id/bn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="30dp"
         android:text="@string/play" />
 
 </RelativeLayout>
