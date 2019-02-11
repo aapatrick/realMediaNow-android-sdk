@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Makes requests against the RealMediaNow API.
  */
 public class RealMediaNow {
-    static String ADBUTLER_ENDPOINT = "https://servedbyadbutler.com/adserve/";
+    static String REALMEDIANOW_ENDPOINT = "https://servedbyadbutler.com/adserve/";
 
     private APIService service;
 
@@ -129,7 +129,7 @@ public class RealMediaNow {
                     .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                     .create();
             Retrofit.Builder builder = new Retrofit.Builder()
-                    .baseUrl(ADBUTLER_ENDPOINT)
+                    .baseUrl(REALMEDIANOW_ENDPOINT)
                     .addConverterFactory(GsonConverterFactory.create(gson));
             service = builder.build().create(APIService.class);
         }

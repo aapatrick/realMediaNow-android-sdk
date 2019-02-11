@@ -38,10 +38,10 @@ public class RealMediaNowTest {
 
         final CompletableFuture<PlacementResponse> success = new CompletableFuture<>();
 
-        RealMediaNow.ADBUTLER_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
-        RealMediaNow adbutler = new RealMediaNow();
+        RealMediaNow.REALMEDIANOW_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
+        RealMediaNow realMediaNow = new RealMediaNow();
         PlacementRequestConfig config = new PlacementRequestConfig.Builder(153105, 214764, 300, 250).build();
-        adbutler.requestPlacement(config, new PlacementResponseListener() {
+        realMediaNow.requestPlacement(config, new PlacementResponseListener() {
             @Override
             public void success(PlacementResponse response) {
                 success.complete(response);
@@ -124,9 +124,9 @@ public class RealMediaNowTest {
         configs.add(config1);
         configs.add(config2);
 
-        RealMediaNow.ADBUTLER_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
-        RealMediaNow adbutler = new RealMediaNow();
-        adbutler.requestPlacements(configs, new PlacementResponseListener() {
+        RealMediaNow.REALMEDIANOW_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
+        RealMediaNow realMediaNow = new RealMediaNow();
+        realMediaNow.requestPlacements(configs, new PlacementResponseListener() {
             @Override
             public void success(PlacementResponse response) {
                 success.complete(response);
@@ -184,9 +184,9 @@ public class RealMediaNowTest {
 
         String testBaseUrl = "http://" + server.getHostName() + ":" + server.getPort() + "/";
         String testUrl = testBaseUrl + "test";
-        RealMediaNow.ADBUTLER_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
-        RealMediaNow adbutler = new RealMediaNow();
-        adbutler.requestPixel(testUrl);
+        RealMediaNow.REALMEDIANOW_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
+        RealMediaNow realMediaNow = new RealMediaNow();
+        realMediaNow.requestPixel(testUrl);
 
         assertEquals(server.takeRequest().getPath(), "/test");
 

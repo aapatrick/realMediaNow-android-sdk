@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.sparklit.adbutler", appContext.getPackageName());
+        assertEquals("com.sparklit.realmedianow", appContext.getPackageName());
     }
 }

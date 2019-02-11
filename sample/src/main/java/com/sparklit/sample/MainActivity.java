@@ -91,7 +91,8 @@ public class MainActivity extends YouTubeBaseActivity {
 
         @Override
         public void onVideoEnded() {
-            button2.setVisibility(View.VISIBLE);
+            //button2.setVisibility(View.VISIBLE);
+            requestPlacement(null);
         }
 
         @Override
@@ -129,7 +130,7 @@ public class MainActivity extends YouTubeBaseActivity {
 
 
     public void requestPlacement(View view) {
-        button2.setVisibility(View.INVISIBLE);
+        //button2.setVisibility(View.INVISIBLE);
         String[] keywords = {"sample2"};
         Set<String> keywordSet = new HashSet<>();
         Collections.addAll(keywordSet, keywords);
