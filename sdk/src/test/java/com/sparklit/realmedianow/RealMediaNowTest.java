@@ -1,4 +1,4 @@
-package com.sparklit.adbutler;
+package com.sparklit.realmedianow;
 
 import org.junit.Test;
 
@@ -12,11 +12,10 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
-import okhttp3.mockwebserver.RecordedRequest;
 
 import static org.junit.Assert.*;
 
-public class AdButlerTest {
+public class RealMediaNowTest {
     @Test
     public void testRequestPlacement() throws Exception {
         MockWebServer server = new MockWebServer();
@@ -39,8 +38,8 @@ public class AdButlerTest {
 
         final CompletableFuture<PlacementResponse> success = new CompletableFuture<>();
 
-        AdButler.ADBUTLER_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
-        AdButler adbutler = new AdButler();
+        RealMediaNow.ADBUTLER_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
+        RealMediaNow adbutler = new RealMediaNow();
         PlacementRequestConfig config = new PlacementRequestConfig.Builder(153105, 214764, 300, 250).build();
         adbutler.requestPlacement(config, new PlacementResponseListener() {
             @Override
@@ -125,8 +124,8 @@ public class AdButlerTest {
         configs.add(config1);
         configs.add(config2);
 
-        AdButler.ADBUTLER_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
-        AdButler adbutler = new AdButler();
+        RealMediaNow.ADBUTLER_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
+        RealMediaNow adbutler = new RealMediaNow();
         adbutler.requestPlacements(configs, new PlacementResponseListener() {
             @Override
             public void success(PlacementResponse response) {
@@ -185,8 +184,8 @@ public class AdButlerTest {
 
         String testBaseUrl = "http://" + server.getHostName() + ":" + server.getPort() + "/";
         String testUrl = testBaseUrl + "test";
-        AdButler.ADBUTLER_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
-        AdButler adbutler = new AdButler();
+        RealMediaNow.ADBUTLER_ENDPOINT = "http://" + server.getHostName() + ":" + server.getPort() + "/";
+        RealMediaNow adbutler = new RealMediaNow();
         adbutler.requestPixel(testUrl);
 
         assertEquals(server.takeRequest().getPath(), "/test");

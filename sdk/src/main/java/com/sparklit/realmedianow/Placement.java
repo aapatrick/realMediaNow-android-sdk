@@ -1,4 +1,4 @@
-package com.sparklit.adbutler;
+package com.sparklit.realmedianow;
 
 /**
  * Models the Placement with all its properties.
@@ -94,12 +94,12 @@ public class Placement {
      * Sends request to record impression for this Placement.
      */
     public void recordImpression() {
-        AdButler adButler = new AdButler();
+        RealMediaNow realMediaNow = new RealMediaNow();
         if (getAccupixelUrl() != null) {
-            adButler.requestPixel(getAccupixelUrl());
+            realMediaNow.requestPixel(getAccupixelUrl());
         }
         if (getTrackingPixel() != null) {
-            adButler.requestPixel(getTrackingPixel());
+            realMediaNow.requestPixel(getTrackingPixel());
         }
     }
 
@@ -108,8 +108,8 @@ public class Placement {
      */
     public void recordClick() {
         if (getRedirectUrl() != null) {
-            AdButler adButler = new AdButler();
-            adButler.requestPixel(getRedirectUrl());
+            RealMediaNow realMediaNow = new RealMediaNow();
+            realMediaNow.requestPixel(getRedirectUrl());
         }
     }
 }

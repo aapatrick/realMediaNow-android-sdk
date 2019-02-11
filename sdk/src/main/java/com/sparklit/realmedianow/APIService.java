@@ -1,4 +1,4 @@
-package com.sparklit.adbutler;
+package com.sparklit.realmedianow;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

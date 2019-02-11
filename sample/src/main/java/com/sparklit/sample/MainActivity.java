@@ -1,9 +1,7 @@
 package com.sparklit.sample;
 
 import android.content.Intent;
-import android.drm.DrmStore;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,11 +12,11 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
-import com.sparklit.adbutler.AdButler;
-import com.sparklit.adbutler.Placement;
-import com.sparklit.adbutler.PlacementRequestConfig;
-import com.sparklit.adbutler.PlacementResponse;
-import com.sparklit.adbutler.PlacementResponseListener;
+import com.sparklit.realmedianow.RealMediaNow;
+import com.sparklit.realmedianow.Placement;
+import com.sparklit.realmedianow.PlacementRequestConfig;
+import com.sparklit.realmedianow.PlacementResponse;
+import com.sparklit.realmedianow.PlacementResponseListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -138,8 +136,8 @@ public class MainActivity extends YouTubeBaseActivity {
         PlacementRequestConfig config = new PlacementRequestConfig.Builder(153105, 214764, 300, 250)
                 .setKeywords(keywordSet)
                 .build();
-        AdButler adbutler = new AdButler();
-        adbutler.requestPlacement(config, new PlacementResponseListener() {
+        RealMediaNow realMediaNow = new RealMediaNow();
+        realMediaNow.requestPlacement(config, new PlacementResponseListener() {
             @Override
             public void success(PlacementResponse response) {
                 System.out.println(response.getStatus());
@@ -193,8 +191,8 @@ public class MainActivity extends YouTubeBaseActivity {
         configs.add(config1);
         configs.add(config2);
 
-        AdButler adbutler = new AdButler();
-        adbutler.requestPlacements(configs, new PlacementResponseListener() {
+        RealMediaNow realMediaNow = new RealMediaNow();
+        realMediaNow.requestPlacements(configs, new PlacementResponseListener() {
             @Override
             public void success(PlacementResponse response) {
                 System.out.println(response.getStatus());
@@ -211,8 +209,8 @@ public class MainActivity extends YouTubeBaseActivity {
     }
 
     public void requestPixel(View view) {
-        AdButler adbutler = new AdButler();
-        adbutler.requestPixel("https://servedbyadbutler.com/default_banner.gif");
+        RealMediaNow realMediaNow = new RealMediaNow();
+        realMediaNow.requestPixel("https://servedbyadbutler.com/default_banner.gif");
     }
 
     public void recordImpression(View view) {
@@ -223,8 +221,8 @@ public class MainActivity extends YouTubeBaseActivity {
                 .setKeywords(keywordSet)
                 .build();
 
-        AdButler adbutler = new AdButler();
-        adbutler.requestPlacement(config, new PlacementResponseListener() {
+        RealMediaNow realMediaNow = new RealMediaNow();
+        realMediaNow.requestPlacement(config, new PlacementResponseListener() {
             @Override
             public void success(PlacementResponse response) {
                 System.out.println(response.getStatus());
@@ -248,8 +246,8 @@ public class MainActivity extends YouTubeBaseActivity {
                 .setKeywords(keywordSet)
                 .build();
 
-        AdButler adbutler = new AdButler();
-        adbutler.requestPlacement(config, new PlacementResponseListener() {
+        RealMediaNow realMediaNow = new RealMediaNow();
+        realMediaNow.requestPlacement(config, new PlacementResponseListener() {
             @Override
             public void success(PlacementResponse response) {
                 System.out.println(response.getStatus());

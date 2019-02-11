@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sparklit.adbutler">
+    package="com.sparklit.realmedianow">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

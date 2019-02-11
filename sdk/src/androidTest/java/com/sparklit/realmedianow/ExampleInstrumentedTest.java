@@ -1,4 +1,4 @@
-package com.sparklit.adbutler;
+package com.sparklit.realmedianow;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

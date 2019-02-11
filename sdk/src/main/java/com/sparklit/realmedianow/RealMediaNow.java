@@ -1,4 +1,4 @@
-package com.sparklit.adbutler;
+package com.sparklit.realmedianow;
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -15,9 +15,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Makes requests against the AdButler API.
+ * Makes requests against the RealMediaNow API.
  */
-public class AdButler {
+public class RealMediaNow {
     static String ADBUTLER_ENDPOINT = "https://servedbyadbutler.com/adserve/";
 
     private APIService service;
