@@ -1,4 +1,4 @@
-# adbutler-android-sdk
+# realMediaNow-android-sdk
 
 ## Installation
 
@@ -28,12 +28,12 @@ dependencies {
 ### Requesting Single Placement
 
 To request a placement, you can build an instance of `PlacementRequestConfig` and specify the attributes you want to send.
-The builder accepts the AdButler account ID, the zone ID, the width of the zone, and the height of the zone in the same sequence as mentioned. In the following example, 153105 is the AdButler account ID, 214764 is the zone ID, 300 is the zone width, and 250 is the zone height.
+The builder accepts the RealMediaNow account ID, the zone ID, the width of the zone, and the height of the zone in the same sequence as mentioned. In the following example, 153105 is the RealMediaNow account ID, 214764 is the zone ID, 300 is the zone width, and 250 is the zone height.
 
 ```java
 PlacementRequestConfig config = new PlacementRequestConfig.Builder(153105, 214764, 300, 250).build();
-AdButler adbutler = new AdButler();
-adbutler.requestPlacement(config, new PlacementResponseListener() {
+RealMediaNow realMediaNow = new RealMediaNow();
+realMediaNow.requestPlacement(config, new PlacementResponseListener() {
   // handle response
 });
 ```
@@ -44,8 +44,8 @@ To request multiple placements, you need a list of `PlacementRequestConfig`s, an
 
 ```java
 List<PlacementRequestConfig> configs = getPlacementRequestConfigs();
-AdButler adbutler = new AdButler();
-adbutler.requestPlacements(configs, new PlacementResponseListener() {
+RealMediaNow realMediaNow = new RealMediaNow();
+realMediaNow.requestPlacements(configs, new PlacementResponseListener() {
   // handle response
 });
 ```
@@ -55,8 +55,8 @@ adbutler.requestPlacements(configs, new PlacementResponseListener() {
 Placement(s) request will take a given listener, and call its methods based on the status of the response accordingly.
 
 ```java
-AdButler adbutler;
-adbutler.requestPlacements(configs, new PlacementResponseListener() {
+RealMediaNow realMediaNow;
+realMediaNow.requestPlacements(configs, new PlacementResponseListener() {
   @Override
   public void success(PlacementResponse response) {
     // Handle success case
@@ -74,8 +74,8 @@ adbutler.requestPlacements(configs, new PlacementResponseListener() {
 You can request a pixel simply by giving the URL:
 
 ```java
-AdButler adbutler = new AdButler();
-adbutler.requestPixel("https://servedbyadbutler.com/default_banner.gif");
+RealMediaNow realMediaNow = new RealMediaNow();
+realMediaNow.requestPixel("https://servedbyadbutler.com/default_banner.gif");
 ```
 
 ### Record Impression
