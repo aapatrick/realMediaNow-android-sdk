@@ -75,7 +75,7 @@ You can request a pixel simply by giving the URL:
 
 ```java
 RealMediaNow realMediaNow = new RealMediaNow();
-realMediaNow.requestPixel("https://servedbyadbutler.com/default_banner.gif");
+realMediaNow.requestPixel("ads.realmedianow.com/default_banner.gif");
 ```
 
 ### Record Impression
