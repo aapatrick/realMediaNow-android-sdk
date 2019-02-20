@@ -211,7 +211,7 @@ public class MainActivity extends YouTubeBaseActivity {
 
     public void requestPixel(View view) {
         RealMediaNow realMediaNow = new RealMediaNow();
-        realMediaNow.requestPixel("https://servedbyadbutler.com/default_banner.gif");
+        realMediaNow.requestPixel("ads.realmedianow.com/default_banner.gif");
     }
 
     public void recordImpression(View view) {

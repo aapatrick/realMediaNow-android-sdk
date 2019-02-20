@@ -22,15 +22,15 @@ public class RealMediaNowTest {
         server.enqueue(new MockResponse().setBody("{\"status\": \"SUCCESS\", " +
                 "\"placements\": {\"placement_1\": {" +
                 "\"banner_id\": \"1\", " +
-                "\"redirect_url\": \"https://servedbyadbutler.com/redirect.spark?MID=153105&plid=543820&setID=214764&channelID=0&CID=0&banID=519401954&PID=0&textadID=0&tc=1&mt=1482382937922945&hc=dc0133e390300a8f3db43edb21adbb3fd596b6d1&location=\", " +
-                "\"image_url\": \"https://servedbyadbutler.com/default_banner.gif\", " +
+                "\"redirect_url\": \"ads.realmedianow.com/redirect.spark?MID=153105&plid=543820&setID=214764&channelID=0&CID=0&banID=519401954&PID=0&textadID=0&tc=1&mt=1482382937922945&hc=dc0133e390300a8f3db43edb21adbb3fd596b6d1&location=\", " +
+                "\"image_url\": \"ads.realmedianow.com/default_banner.gif\", " +
                 "\"width\": \"300\", " +
                 "\"height\": \"250\", " +
                 "\"alt_text\": \"\", " +
                 "\"accompanied_html\": \"\", " +
                 "\"target\": \"_blank\", " +
                 "\"tracking_pixel\": \"\", " +
-                "\"accupixel_url\": \"https://servedbyadbutler.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251\", " +
+                "\"accupixel_url\": \"ads.realmedianow.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251\", " +
                 "\"refresh_url\": \"\", " +
                 "\"refresh_time\": \"\", " +
                 "\"body\": \"\"}}}"));
@@ -60,14 +60,14 @@ public class RealMediaNowTest {
         assertEquals(response.getPlacements().size(), 1);
         Placement placement = response.getPlacements().get(0);
         assertEquals(placement.getBannerId(), 1);
-        assertEquals(placement.getRedirectUrl(), "https://servedbyadbutler.com/redirect.spark?MID=153105&plid=543820&setID=214764&channelID=0&CID=0&banID=519401954&PID=0&textadID=0&tc=1&mt=1482382937922945&hc=dc0133e390300a8f3db43edb21adbb3fd596b6d1&location=");
-        assertEquals(placement.getImageUrl(), "https://servedbyadbutler.com/default_banner.gif");
+        assertEquals(placement.getRedirectUrl(), "ads.realmedianow.com/redirect.spark?MID=153105&plid=543820&setID=214764&channelID=0&CID=0&banID=519401954&PID=0&textadID=0&tc=1&mt=1482382937922945&hc=dc0133e390300a8f3db43edb21adbb3fd596b6d1&location=");
+        assertEquals(placement.getImageUrl(), "ads.realmedianow.com/default_banner.gif");
         assertEquals(placement.getWidth(), 300);
         assertEquals(placement.getHeight(), 250);
         assertEquals(placement.getAltText(), "");
         assertEquals(placement.getTarget(), "_blank");
         assertEquals(placement.getTrackingPixel(), "");
-        assertEquals(placement.getAccupixelUrl(), "https://servedbyadbutler.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251");
+        assertEquals(placement.getAccupixelUrl(), "ads.realmedianow.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251");
         assertEquals(placement.getRefreshUrl(), "");
         assertEquals(placement.getRefreshTime(), "");
         assertEquals(placement.getBody(), "");
@@ -81,30 +81,30 @@ public class RealMediaNowTest {
         server.enqueue(new MockResponse().setBody("{\"status\": \"SUCCESS\", " +
                 "\"placements\": {\"placement_1\": {" +
                 "\"banner_id\": \"1\", " +
-                "\"redirect_url\": \"https://servedbyadbutler.com/redirect.spark?MID=153105&plid=543820&setID=214764&channelID=0&CID=0&banID=519401954&PID=0&textadID=0&tc=1&mt=1482382937922945&hc=dc0133e390300a8f3db43edb21adbb3fd596b6d1&location=\", " +
-                "\"image_url\": \"https://servedbyadbutler.com/default_banner.gif\", " +
+                "\"redirect_url\": \"ads.realmedianow.com/redirect.spark?MID=153105&plid=543820&setID=214764&channelID=0&CID=0&banID=519401954&PID=0&textadID=0&tc=1&mt=1482382937922945&hc=dc0133e390300a8f3db43edb21adbb3fd596b6d1&location=\", " +
+                "\"image_url\": \"ads.realmedianow.com/default_banner.gif\", " +
                 "\"width\": \"300\", " +
                 "\"height\": \"250\", " +
                 "\"alt_text\": \"\", " +
                 "\"accompanied_html\": \"\", " +
                 "\"target\": \"_blank\", " +
                 "\"tracking_pixel\": \"\", " +
-                "\"accupixel_url\": \"https://servedbyadbutler.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251\", " +
+                "\"accupixel_url\": \"ads.realmedianow.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251\", " +
                 "\"refresh_url\": \"\", " +
                 "\"refresh_time\": \"\", " +
                 "\"body\": \"\"}}}"));
         server.enqueue(new MockResponse().setBody("{\"status\": \"SUCCESS\", " +
                 "\"placements\": {\"placement_1\": {" +
                 "\"banner_id\": \"2\", " +
-                "\"redirect_url\": \"https://servedbyadbutler.com/redirect.spark?MID=153105&plid=550986&setID=214764&channelID=0&CID=0&banID=519407754&PID=0&textadID=0&tc=1&mt=1482382941414969&hc=0aafa9e4186a53ebb33094aea2f80c3a748cc7f0&location=\", " +
-                "\"image_url\": \"https://servedbyadbutler.com/default_banner.gif\", " +
+                "\"redirect_url\": \"ads.realmedianow.com/redirect.spark?MID=153105&plid=550986&setID=214764&channelID=0&CID=0&banID=519407754&PID=0&textadID=0&tc=1&mt=1482382941414969&hc=0aafa9e4186a53ebb33094aea2f80c3a748cc7f0&location=\", " +
+                "\"image_url\": \"ads.realmedianow.com/default_banner.gif\", " +
                 "\"width\": \"300\", " +
                 "\"height\": \"250\", " +
                 "\"alt_text\": \"\", " +
                 "\"accompanied_html\": \"\", " +
                 "\"target\": \"_blank\", " +
-                "\"tracking_pixel\": \"https://servedbyadbutler.com/default_banner.gif?foo=bar&demo=fakepixel\", " +
-                "\"accupixel_url\": \"https://servedbyadbutler.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251\", " +
+                "\"tracking_pixel\": \"ads.realmedianow.com/default_banner.gif?foo=bar&demo=fakepixel\", " +
+                "\"accupixel_url\": \"ads.realmedianow.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251\", " +
                 "\"refresh_url\": \"\", " +
                 "\"refresh_time\": \"\", " +
                 "\"body\": \"\"}}}"));
@@ -146,27 +146,27 @@ public class RealMediaNowTest {
         for (Placement placement : response.getPlacements()) {
             if (placement.getBannerId() == 1) {
                 assertEquals(placement.getBannerId(), 1);
-                assertEquals(placement.getRedirectUrl(), "https://servedbyadbutler.com/redirect.spark?MID=153105&plid=543820&setID=214764&channelID=0&CID=0&banID=519401954&PID=0&textadID=0&tc=1&mt=1482382937922945&hc=dc0133e390300a8f3db43edb21adbb3fd596b6d1&location=");
-                assertEquals(placement.getImageUrl(), "https://servedbyadbutler.com/default_banner.gif");
+                assertEquals(placement.getRedirectUrl(), "ads.realmedianow.com/redirect.spark?MID=153105&plid=543820&setID=214764&channelID=0&CID=0&banID=519401954&PID=0&textadID=0&tc=1&mt=1482382937922945&hc=dc0133e390300a8f3db43edb21adbb3fd596b6d1&location=");
+                assertEquals(placement.getImageUrl(), "ads.realmedianow.com/default_banner.gif");
                 assertEquals(placement.getWidth(), 300);
                 assertEquals(placement.getHeight(), 250);
                 assertEquals(placement.getAltText(), "");
                 assertEquals(placement.getTarget(), "_blank");
                 assertEquals(placement.getTrackingPixel(), "");
-                assertEquals(placement.getAccupixelUrl(), "https://servedbyadbutler.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251");
+                assertEquals(placement.getAccupixelUrl(), "ads.realmedianow.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251");
                 assertEquals(placement.getRefreshUrl(), "");
                 assertEquals(placement.getRefreshTime(), "");
                 assertEquals(placement.getBody(), "");
             } else {
                 assertEquals(placement.getBannerId(), 2);
-                assertEquals(placement.getRedirectUrl(), "https://servedbyadbutler.com/redirect.spark?MID=153105&plid=550986&setID=214764&channelID=0&CID=0&banID=519407754&PID=0&textadID=0&tc=1&mt=1482382941414969&hc=0aafa9e4186a53ebb33094aea2f80c3a748cc7f0&location=");
-                assertEquals(placement.getImageUrl(), "https://servedbyadbutler.com/default_banner.gif");
+                assertEquals(placement.getRedirectUrl(), "ads.realmedianow.com/redirect.spark?MID=153105&plid=550986&setID=214764&channelID=0&CID=0&banID=519407754&PID=0&textadID=0&tc=1&mt=1482382941414969&hc=0aafa9e4186a53ebb33094aea2f80c3a748cc7f0&location=");
+                assertEquals(placement.getImageUrl(), "ads.realmedianow.com/default_banner.gif");
                 assertEquals(placement.getWidth(), 300);
                 assertEquals(placement.getHeight(), 250);
                 assertEquals(placement.getAltText(), "");
                 assertEquals(placement.getTarget(), "_blank");
-                assertEquals(placement.getTrackingPixel(), "https://servedbyadbutler.com/default_banner.gif?foo=bar&demo=fakepixel");
-                assertEquals(placement.getAccupixelUrl(), "https://servedbyadbutler.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251");
+                assertEquals(placement.getTrackingPixel(), "ads.realmedianow.com/default_banner.gif?foo=bar&demo=fakepixel");
+                assertEquals(placement.getAccupixelUrl(), "ads.realmedianow.com/adserve.ibs/;ID=153105;size=1x1;type=pixel;setID=214764;plid=543820;BID=519401954;wt=1482382947;rnd=68251");
                 assertEquals(placement.getRefreshUrl(), "");
                 assertEquals(placement.getRefreshTime(), "");
                 assertEquals(placement.getBody(), "");

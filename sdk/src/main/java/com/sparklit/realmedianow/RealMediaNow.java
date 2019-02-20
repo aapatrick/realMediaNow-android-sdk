@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Makes requests against the RealMediaNow API.
  */
 public class RealMediaNow {
-    static String REALMEDIANOW_ENDPOINT = "https://servedbyadbutler.com/adserve/";
+    static String REALMEDIANOW_ENDPOINT = "ads.realmedianow.com";
 
     private APIService service;
 
